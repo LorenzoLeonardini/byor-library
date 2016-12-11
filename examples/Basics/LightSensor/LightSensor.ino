@@ -2,7 +2,7 @@
  * Before run this sketch you have to set two
  * parameters in byor.h file.
  * Run first "LightSensorCalibration.ino" file
- * in examples/Calibration/LightSensorCalibration
+ * in examples/Advanced/LightSensorCalibration
  * and then copy and paste values.
  */
 
