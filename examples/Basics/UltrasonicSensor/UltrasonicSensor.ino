@@ -9,8 +9,8 @@ BYOR byor;
 void setup()
 {
 	Serial.begin(9600);
-	//byor.setUSMode(DIST_MM)	// uncomment for distance in mm
-	//byor.setUSMode(DIST_INCHES)	// uncomment for distance in inches
+	//byor.setUSMode(DIST_MM);	// uncomment for distance in mm
+	//byor.setUSMode(DIST_INCHES);	// uncomment for distance in inches
 }
 
 void loop()
