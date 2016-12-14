@@ -36,7 +36,7 @@ robot	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
-TOGGLE	LITERAL1
+TOGGLED	LITERAL1
 NORMAL	LITERAL1
 DIST_INCHES	LITERAL1
 DIST_RAW	LITERAL1
