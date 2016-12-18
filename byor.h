@@ -89,6 +89,8 @@ class BYOR
 		bool lightSensorMode = 0;
 		bool leftMotorMode = 0;
 		bool rightMotorMode = 0;
+
+		int SpeedControl(int speed);
 };
 
 #endif
