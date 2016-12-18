@@ -149,6 +149,9 @@ void BYOR::led(bool state)
 
 void BYOR::move(int left_speed, int right_speed)
 {
+	left_speed = SpeedControl(left_speed);
+	right_speed = SpeedControl(right_speed);
+	
 	if(leftMotorMode)
 		left_speed *= -1;
 	if(rightMotorMode)
@@ -208,4 +211,13 @@ void BYOR::delay_s(float seconds)
 	delay((unsigned long) (seconds*1000));
 }
 
+int BYOR::SpeedControl(int speed)
+{
+	if (speed > 100)
+		speed = 100;
+	else if (speed < -100)
+		speed = -100;
+
+	return speed;
+}
 
