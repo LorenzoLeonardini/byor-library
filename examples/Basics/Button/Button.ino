@@ -9,7 +9,7 @@ BYOR byor;
 
 void setup()
 {
-	//byor.setButton1Mode(TOGGLE); // toggle button read
+	//byor.setButton1Mode(TOGGLED); // toggle button read
 }
 
 void loop()
