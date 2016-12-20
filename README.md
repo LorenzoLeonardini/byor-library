@@ -6,6 +6,8 @@ for: Scuola di Robotica.
 
 Visit: http://www.scuoladirobotica.it
 
+Download documentation here: https://www.dropbox.com/s/gi9zkj94ymzv66z/BYOR%20library%20software%20manual.pdf?dl=0
+
 #Instruction:
 
 Unzip file, copy the whole directory in:
