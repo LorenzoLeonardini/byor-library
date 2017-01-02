@@ -23,11 +23,13 @@ void loop()
 	int light = byor.light();	// read light [%]
 
 	if(light > 70)
-		Serial.println("Very bright");
+		Serial.print("Very bright");
 	else if(light > 45)
-		Serial.println("Half-light");
+		Serial.print("Half-light");
 	else
-		Serial.println("Dark");
+		Serial.print("Dark");
+	
+	Serial.print("\t"); Serial.println(light);
 
 	byor.delay_s(1);
 }
