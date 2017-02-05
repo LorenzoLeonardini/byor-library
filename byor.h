@@ -1,5 +1,5 @@
 /*
-	byor.cpp 		- Version 0.9 beta
+	byor.cpp 		- Version 1.0
 	Library for BYOR robot
 	Created: 2 December 2016
 	Last changes: 11 December 2016
@@ -23,9 +23,9 @@
 ////////////////////////////////////////
 
 #define LED_PIN	   13		// led pin
-#define L_MOTOR_1  12    	// first direction pin (left motor)
-#define L_MOTOR_2  11    	// second direction pin (left motor)
-#define L_MOTOR_E  10    	// enable pin (left motor)
+#define L_MOTOR_1  11    	// first direction pin (left motor)
+#define L_MOTOR_2  10    	// second direction pin (left motor)
+#define L_MOTOR_E  12    	// enable pin (left motor)
 
 #define BUZZER_PIN	9
 
@@ -35,8 +35,8 @@
 #define US_TRIGGER	6
 
 #define R_MOTOR_1	5     	// first direction pin (right motor)
-#define R_MOTOR_2	4     	// second direction pin (right motor)
-#define R_MOTOR_E	3     	// enable pin (right motor)
+#define R_MOTOR_2	3     	// second direction pin (right motor)
+#define R_MOTOR_E	4     	// enable pin (right motor)
 #define BUTTON_2	2
 
 #define LIGHTSENSORPIN	0
