@@ -1,5 +1,5 @@
 /*
-	byor.cpp 		- Version 0.9 beta
+	byor.cpp 		- Version 1.0
 	Library for BYOR robot
 	Created: 2 Dicember 2016
 	Last changes: 11 Dicember 2016
@@ -151,7 +151,7 @@ void BYOR::move(int left_speed, int right_speed)
 {
 	left_speed = SpeedControl(left_speed);
 	right_speed = SpeedControl(right_speed);
-	
+
 	if(leftMotorMode)
 		left_speed *= -1;
 	if(rightMotorMode)
@@ -159,30 +159,28 @@ void BYOR::move(int left_speed, int right_speed)
 
 	if(left_speed >= 0)		// left motor forward
 	{
-		analogWrite(L_MOTOR_E, left_speed*2.55);
-		digitalWrite(L_MOTOR_1, HIGH);
+		analogWrite(L_MOTOR_1, left_speed*2.55);
 		digitalWrite(L_MOTOR_2, LOW);
 	}
 	else					// left motor backward
 	{
-		analogWrite(L_MOTOR_E, (-left_speed)*2.55);
 		digitalWrite(L_MOTOR_1, LOW);
-		digitalWrite(L_MOTOR_2, HIGH);
-	}	
-	
+		analogWrite(L_MOTOR_2, (-left_speed)*2.55);
+	}
+
 	if(right_speed >= 0)	// right motor forward
 	{
-		analogWrite(R_MOTOR_E, right_speed*2.55);
-		digitalWrite(R_MOTOR_1, HIGH);
+		analogWrite(R_MOTOR_1, right_speed*2.55);
 		digitalWrite(R_MOTOR_2, LOW);
 	}
 	else					// right motor backward
 	{
-		analogWrite(R_MOTOR_E, (-right_speed)*2.55);
 		digitalWrite(R_MOTOR_1, LOW);
-		digitalWrite(R_MOTOR_2, HIGH);
+		analogWrite(R_MOTOR_2, (-right_speed)*2.55);
 	}
-	
+
+	digitalWrite(L_MOTOR_E, HIGH);
+	digitalWrite(R_MOTOR_E, HIGH);
 }
 
 void BYOR::stop(void)
@@ -191,8 +189,8 @@ void BYOR::stop(void)
 	digitalWrite(L_MOTOR_2, LOW);
 	digitalWrite(R_MOTOR_1, LOW);
 	digitalWrite(R_MOTOR_2, LOW);
-	analogWrite(L_MOTOR_E, 0);
-	analogWrite(L_MOTOR_E, 0);
+	digitalWrite(L_MOTOR_E, LOW);
+	digitalWrite(L_MOTOR_E, LOW);
 }
 
 void BYOR::buzzer(unsigned int note, unsigned long duration_ms)
@@ -220,4 +218,3 @@ int BYOR::SpeedControl(int speed)
 
 	return speed;
 }
-
