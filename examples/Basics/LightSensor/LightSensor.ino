@@ -1,35 +1,40 @@
 /*
- * Before run this sketch you have to set two
- * parameters in byor.h file.
- * Run first "LightSensorCalibration.ino" file
- * in examples/Advanced/LightSensorCalibration
- * and then copy and paste values.
+ * Lorenzo Daidone
+ * lorenzodaidone [at] yahoo [dot] it
+ *
+ * Scuola di Robotica
+ * www.scuoladirobotica.it
+ *
+ * Created: 24 April 2017
+ * Last changes: 24 April 2017
+ * 
+ * Sensor: QRE1113 (Analog) by Sparkfun
  */
 
 #include "byor.h"
 
-#define SERIAL_SPEED	9600	// baud rate
+#define SERIAL_SPEED  9600  // baud rate
+#define LIGHT_THRESHOLD 70  // percentage threshold
 
 BYOR byor;
 
 void setup()
 {
-	Serial.begin(SERIAL_SPEED);
-	byor.setLightSensorMode(PERCENTAGE);
+  Serial.begin(SERIAL_SPEED);
+  byor.setLightSensorMode(PERCENTAGE); // comment for a raw reading
+  //byor.setSamplesNo(200); // uncomment if necessary
 }
 
 void loop()
 {
-	int light = byor.light();	// read light [%]
+  int light = byor.light(); // read light [%]
 
-	if(light > 70)
-		Serial.print("Very bright");
-	else if(light > 45)
-		Serial.print("Half-light");
-	else
-		Serial.print("Dark");
-	
-	Serial.print("\t"); Serial.println(light);
+  if(light > LIGHT_THRESHOLD)
+    Serial.print("Black");
+  else
+    Serial.print("White");
 
-	byor.delay_s(1);
+  Serial.print("\t"); Serial.println(light);
+
+  byor.delay_s(0.01); // wait 10 ms
 }
