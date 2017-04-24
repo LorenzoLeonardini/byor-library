@@ -1,0 +1,48 @@
+#######################################
+# Syntax Coloring Map SD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+BYOR	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setButton1Mode	KEYWORD2
+setButton2Mode	KEYWORD2
+setUSMode	KEYWORD2
+setSamplesNo	KEYWORD2
+setLightSensorMode	KEYWORD2
+reverseMotorL	KEYWORD2
+reverseMotorR	KEYWORD2
+button1	KEYWORD2
+button2	KEYWORD2
+distance	KEYWORD2
+getSamplesNo	KEYWORD2
+light	KEYWORD2
+led	KEYWORD2
+move	KEYWORD2
+stop	KEYWORD2
+buzzer	KEYWORD2
+delay_s	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+byor	KEYWORD2
+robot	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+TOGGLED	LITERAL1
+NORMAL	LITERAL1
+DIST_INCHES	LITERAL1
+DIST_RAW	LITERAL1
+DIST_MM	LITERAL1
+DIST_CM	LITERAL1
+PERCENTAGE	LITERAL1
+RAW	LITERAL1
