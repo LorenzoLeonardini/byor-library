@@ -1,3 +1,15 @@
+/*
+ * Lorenzo Daidone
+ * lorenzodaidone [at] yahoo [dot] it
+ *
+ * Scuola di Robotica
+ * www.scuoladirobotica.it
+ *
+ * Created: 24 April 2017
+ * Last changes: 24 April 2017
+ *
+ */
+
 #include "byor.h"
 
 BYOR byor;
@@ -23,13 +35,13 @@ void loop()
 	byor.delay_s(1);
 
 	//move left
-	byor.move(35, 75);
+	byor.move(55, 90);
 	byor.delay_s(2.5);
 	byor.stop();
 	byor.delay_s(1);
 
 	//move right
-	byor.move(75, 35);
+	byor.move(90, 55);
 	byor.delay_s(2.5);
 	byor.stop();
 	byor.delay_s(1);
