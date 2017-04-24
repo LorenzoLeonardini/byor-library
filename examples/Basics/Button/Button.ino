@@ -1,4 +1,14 @@
 /*
+ * Lorenzo Daidone
+ * lorenzodaidone [at] yahoo [dot] it
+ *
+ * Scuola di Robotica
+ * www.scuoladirobotica.it
+ *
+ * Created: 24 April 2017
+ * Last changes: 24 April 2017
+ *
+ * Default button pin: 8
  * Button requires a pull-down resistor.
  * If you place a pull-up resistor, uncomment setup line.
  */
@@ -9,7 +19,7 @@ BYOR byor;
 
 void setup()
 {
-	//byor.setButton1Mode(TOGGLED); // toggle button read
+	//byor.setButton1Mode(TOGGLE); // toggle button read
 }
 
 void loop()
