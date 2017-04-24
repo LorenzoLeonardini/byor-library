@@ -2,9 +2,11 @@
 	byor.cpp 		- Version 1.0
 	Library for BYOR robot
 	Created: 2 Dicember 2016
-	Last changes: 11 Dicember 2016
+	Last changes: 24 April 2017
 
 	Lorenzo Daidone
+	lorenzodaidone [at] yahoo [dot] it
+	
 	Scuola di Robotica
 	www.scuoladirobotica.it
 */
@@ -35,6 +37,7 @@ BYOR::BYOR()
 
 	pinMode(LED_PIN, OUTPUT);
 
+	setSamplesNo(DEFAULT_SAMPLES_NO);
 }
 
 void BYOR::setButton1Mode(bool mode)
@@ -63,6 +66,11 @@ void BYOR::setUSMode(char mode)
 		usMode = 3;
 	else
 		usMode = 2;
+}
+
+void BYOR::setSamplesNo(unsigned int samplesNo)
+{
+	samples = samplesNo;
 }
 
 void BYOR::setLightSensorMode(bool mode)		// light sensor result shown as raw or percentage
@@ -123,18 +131,26 @@ float BYOR::distance(void)
 
 	return distanceUS;
 }
-
+unsigned int BYOR::getSamplesNo(void)
+{
+	return samples;
+}
 int BYOR::light(void)
 {
-	float lightValue = analogRead(LIGHTSENSORPIN);
+	float lightValue = 0;
 
-	if(lightSensorMode)
+	for(unsigned int i = 0; i < samples; i++)
 	{
-		lightValue -= LIGHT_MIN_VAL;
-		lightValue *= LIGHT_CONSTANT;
+		lightValue += analogRead(LIGHTSENSORPIN);
+	}
+	lightValue /= samples;
+
+	if(lightSensorMode) //  percentage mode
+	{
+		lightValue = (lightValue*100.)/1024.;
 	}
 
-	return (int) (lightValue);				// default raw analog read return
+	return (int) (lightValue); // defaul returns a raw read
 }
 
 /****************************************/
@@ -149,12 +165,12 @@ void BYOR::led(bool state)
 
 void BYOR::move(int left_speed, int right_speed)
 {
-	left_speed = SpeedControl(left_speed);
-	right_speed = SpeedControl(right_speed);
+	left_speed = SpeedCheck(left_speed); // speed is in range -100, 100 ?
+	right_speed = SpeedCheck(right_speed); // speed is in range -100, 100 ?
 
-	if(leftMotorMode)
+	if(leftMotorMode) // check reverseMotorL
 		left_speed *= -1;
-	if(rightMotorMode)
+	if(rightMotorMode) // check reverseMotorR
 		right_speed *= -1;
 
 	if(left_speed >= 0)		// left motor forward
@@ -190,14 +206,14 @@ void BYOR::stop(void)
 	digitalWrite(R_MOTOR_1, LOW);
 	digitalWrite(R_MOTOR_2, LOW);
 	digitalWrite(L_MOTOR_E, LOW);
-	digitalWrite(L_MOTOR_E, LOW);
+	digitalWrite(R_MOTOR_E, LOW);
 }
 
-void BYOR::buzzer(unsigned int note, unsigned long duration_ms)
+void BYOR::buzzer(unsigned int note, float duration_s)
 {
 	tone(BUZZER_PIN, note);
-	delay(duration_ms);
-	noTone(BUZZER_PIN);
+	delay_s(duration_s);
+	noTone(BUZZER_PIN); // stop sound
 }
 
 /****************************************/
@@ -209,7 +225,7 @@ void BYOR::delay_s(float seconds)
 	delay((unsigned long) (seconds*1000));
 }
 
-int BYOR::SpeedControl(int speed)
+int BYOR::SpeedCheck(int speed)
 {
 	if (speed > 100)
 		speed = 100;
