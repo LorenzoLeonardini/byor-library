@@ -8,9 +8,9 @@
  * Created: 24 April 2017
  * Last changes: 24 April 2017
  *
- *	This sketch allows BYOR to go forward and backward
- *	just using reverseMotor functions instead of a
- *	negative parameter
+ * This sketch allows BYOR to go forward and backward
+ * just using reverseMotor functions instead of a
+ * negative parameter
  */
 
 #include "byor.h"
