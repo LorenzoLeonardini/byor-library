@@ -1,12 +1,12 @@
 /*
-	byor.cpp 		- Version 1.0
+	byor.cpp 		- Version 2.0
 	Library for BYOR robot
 	Created: 2 Dicember 2016
 	Last changes: 24 April 2017
 
 	Lorenzo Daidone
 	lorenzodaidone [at] yahoo [dot] it
-	
+
 	Scuola di Robotica
 	www.scuoladirobotica.it
 */
