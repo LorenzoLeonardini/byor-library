@@ -1,14 +1,15 @@
-#BYOR Library
+BYOR Library
 The aim of this library is to make BYOR easier to program.
 
 Created by: Lorenzo Daidone
-for: Scuola di Robotica.
+lorenzodaidone [at] yahoo [dot] it
 
+for: Scuola di Robotica.
 Visit: http://www.scuoladirobotica.it
 
 Download documentation here: https://www.dropbox.com/s/zkred63gc3giub6/BYOR%20library%20software%20manual.pdf?dl=0
 
-#Instruction:
+Instruction:
 
 Unzip file, copy the whole directory in:
 ~/Documents/Arduino/libraries/
