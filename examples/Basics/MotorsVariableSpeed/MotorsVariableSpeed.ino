@@ -1,12 +1,21 @@
 /*
+ * Lorenzo Daidone
+ * lorenzodaidone [at] yahoo [dot] it
+ *
+ * Scuola di Robotica
+ * www.scuoladirobotica.it
+ *
+ * Created: 24 April 2017
+ * Last changes: 24 April 2017
+ *
  *	This sketch allows BYOR to go forward and backward
  *	just using reverseMotor functions instead of a
- *	negative parameter.
+ *	negative parameter
  */
 
 #include "byor.h"
 
-#define RITARDO	0.05
+#define DELAY_INC	0.05
 
 BYOR byor;
 
@@ -22,7 +31,7 @@ void loop()
 	for (i = 20; i <= 100; i++)
 	{
 		byor.move(i, i);
-		byor.delay_s(RITARDO);
+		byor.delay_s(DELAY_INC);
 	}
 
 	byor.delay_s(2);
