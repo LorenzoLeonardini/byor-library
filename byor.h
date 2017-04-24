@@ -1,10 +1,12 @@
 /*
-	byor.cpp 		- Version 1.0
+	byor.cpp 		- Version 2.0
 	Library for BYOR robot
 	Created: 2 December 2016
-	Last changes: 11 December 2016
+	Last changes: 24 April 2017
 
 	Lorenzo Daidone
+	lorenzodaidone [at] yahoo [dot] it
+	
 	Scuola di Robotica
 	www.scuoladirobotica.it
 */
@@ -13,14 +15,6 @@
 #define BYOR_h
 
 #include "Arduino.h"
-
-////////////////////////////////////////
-//USER CAN CHANGE THESE TWO PARAMETERS//
-//////////SEE DOCUMENTATION/////////////
-#define LIGHT_CONSTANT	1
-#define LIGHT_MIN_VAL	0
-/////////////////END////////////////////
-////////////////////////////////////////
 
 #define LED_PIN	   13		// led pin
 #define L_MOTOR_1  11    	// first direction pin (left motor)
@@ -40,6 +34,7 @@
 #define BUTTON_2	2
 
 #define LIGHTSENSORPIN	0
+#define DEFAULT_SAMPLES_NO 20u
 
 #define	TOGGLED		1
 #define NORMAL		0
@@ -63,6 +58,7 @@ class BYOR
 		void setButton1Mode(bool mode);
 		void setButton2Mode(bool mode);
 		void setUSMode(char mode);
+		void setSamplesNo(unsigned int samplesNo);
 		void setLightSensorMode(bool mode);
 		void reverseMotorL();
 		void reverseMotorR();
@@ -71,13 +67,14 @@ class BYOR
 		bool button1(void);
 		bool button2(void);
 		float distance(void);
+		unsigned int getSamplesNo(void);
 		int light(void);
 
 		/* WRITING ROUTINES */
 		void led(bool state);
 		void move(int left_speed, int right_speed);
 		void stop(void);
-		void buzzer(unsigned int note, unsigned long duration_ms);
+		void buzzer(unsigned int note, float duration_s);
 
 		/* OTHER ROUTINES */
 		void delay_s(float seconds);
@@ -89,8 +86,9 @@ class BYOR
 		bool lightSensorMode = 0;
 		bool leftMotorMode = 0;
 		bool rightMotorMode = 0;
+		unsigned int samples = 0;
 
-		int SpeedControl(int speed);
+		int SpeedCheck(int speed);
 };
 
 #endif
