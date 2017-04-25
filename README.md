@@ -8,7 +8,7 @@ _lorenzodaidone [at] yahoo [dot] it_
 for: **Scuola di Robotica**.
 Visit: http://www.scuoladirobotica.it
 
-Download documentation here: https://www.dropbox.com/s/ttbs7l8bfzkv6gt/BYOR%20library%20software%20manual%20v2.pdf?dl=0
+Download documentation here: https://www.dropbox.com/s/pgbyzvoyclzwilw/BYOR%20library%20software%20manual%20v2.pdf?dl=0
 
 ## Instruction:
 
