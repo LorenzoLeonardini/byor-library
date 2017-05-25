@@ -17,12 +17,12 @@ Unzip file, copy the whole directory in:
 
 In order to use this library, insert the include statement at the top of each sketch:
 ```c++
-\#include “byor.h”
+#include “byor.h”
 ```
 
 and declare byor object:
 
-```cpp
+```c++
 BYOR byor;
 ```
 
