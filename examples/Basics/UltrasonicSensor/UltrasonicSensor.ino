@@ -20,6 +20,7 @@ void setup()
 	Serial.begin(9600);
 	//byor.setUSMode(DIST_MM)	// uncomment for distance in mm
 	//byor.setUSMode(DIST_INCHES)	// uncomment for distance in inches
+  //byor.setUSFilter(true) //uncomment to use the built in filter
 }
 
 void loop()
