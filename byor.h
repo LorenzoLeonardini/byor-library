@@ -2,7 +2,7 @@
 byor.cpp    - Version 2.0
 Library for BYOR robot
 Created: 2 December 2016
-Last changes: 24 April 2017
+Last changes: 23 August 2017
 
 Lorenzo Daidone
 lorenzodaidone [at] yahoo [dot] it

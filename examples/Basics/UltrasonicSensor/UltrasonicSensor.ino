@@ -6,7 +6,7 @@
  * www.scuoladirobotica.it
  * 
  * Created: 24 April 2017
- * Last changes: 24 April 2017
+ * Last changes: 23 August 2017
  * 
  * Distance in cm by default.
  */
